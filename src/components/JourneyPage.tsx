@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { submitGuideLead } from "@/lib/leads.functions";
+import { submitEnquiry } from "@/lib/enquiries.functions";
 import { ArrowRight, Check, ChevronDown, Menu, Phone, Play, Star, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hero from "@/assets/journey/hero-halong.jpg";
@@ -84,7 +85,6 @@ export function JourneyPage() {
   const [openDays,setOpenDays]=useState<number[]>([0]);
   const [video,setVideo]=useState("1oI8TyftBj8");
   const [reviewFilter,setReviewFilter]=useState("all");
-  const [enquirySent,setEnquirySent]=useState(false);
   const [licenseOpen,setLicenseOpen]=useState(false);
   const [galleryOpen,setGalleryOpen]=useState(false);
   const toggleDay=(i:number)=>setOpenDays((v)=>v.includes(i)?v.filter((x)=>x!==i):[...v,i]);
@@ -136,7 +136,7 @@ export function JourneyPage() {
 
       <section className="py-24 md:py-28"><div className="container-editorial grid items-center gap-14 md:grid-cols-12"><div className="md:col-span-6"><p className="eyebrow">Free Vietnam private travel planning guide</p><h2 className="mt-4 text-4xl md:text-5xl">Planning Vietnam?<br/>Start With Our Private Travel Guide.</h2><p className="mt-6 max-w-xl leading-relaxed text-foreground/75">Get practical route ideas, best travel periods, hotel guidance, pacing advice, and tips from our Hanoi-based travel team.</p></div><div className="border border-border bg-cream p-7 md:col-span-6 md:p-10"><GuideForm/></div></div></section>
 
-      <section id="inquiry" className="bg-cream py-24 md:py-32"><div className="container-editorial grid gap-14 lg:grid-cols-12"><div className="lg:col-span-5"><p className="eyebrow">Begin your private journey</p><h2 className="mt-4 text-4xl md:text-5xl">Customize Your Vietnam Journey</h2><p className="mt-6 leading-relaxed text-foreground/75">Share your dates, travel party, and pace. Our Hanoi team will prepare a free, zero-obligation proposal tailored to you.</p><div className="mt-9 border-t border-border pt-7 text-sm leading-8"><a href="tel:+842439276076" className="block hover:text-ember"><Phone className="mr-2 inline size-4"/>+84 24 3927 6076 · Hanoi</a><a href="tel:+5491164601100" className="block hover:text-ember"><Phone className="mr-2 inline size-4"/>+54 911 6460 1100 · Americas</a><a href="mailto:info@absoluteasiatravel.com" className="block hover:text-ember">info@absoluteasiatravel.com</a></div></div><div className="bg-background p-7 shadow-soft lg:col-span-7 md:p-10">{enquirySent?<div className="py-16 text-center"><p className="eyebrow">Thank you</p><h3 className="mt-4 text-3xl">Your journey brief has been received.</h3><p className="mt-4 text-muted-foreground">A travel specialist will be in touch to discuss your private Vietnam journey.</p></div>:<form onSubmit={(e)=>{e.preventDefault();setEnquirySent(true)}} className="grid gap-5 sm:grid-cols-2"><Field label="Your Full Name" name="name" required/><Field label="Email Address" name="email" type="email" required/><Field label="Phone / WhatsApp" name="phone" type="tel" required/><label className="grid gap-2 text-sm">Guests<select name="guests" className="min-h-12 border border-input bg-background px-3 focus:outline-none focus:ring-2 focus:ring-ring"><option>2 Adults</option><option>3–4 (Family)</option><option>5–8 (Multi-Gen)</option><option>9+ (Private Group)</option></select></label><Field label="Estimated Travel Month / Year" name="dates" placeholder="e.g. October 2026" full/><label className="grid gap-2 text-sm sm:col-span-2">Special Wishes / Pacing / Mobility<textarea name="wishes" rows={5} placeholder="Tell us what would make this journey right for you." className="border border-input bg-background px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ring"/></label><div className="sm:col-span-2"><Button type="submit" size="lg" className="w-full">Get Your Free Custom Itinerary <ArrowRight/></Button><p className="mt-3 text-center text-xs text-muted-foreground">No payment required · Zero spam · Your details are used only for your journey proposal.</p></div></form>}</div></div></section>
+      <section id="inquiry" className="bg-cream py-24 md:py-32"><div className="container-editorial grid gap-14 lg:grid-cols-12"><div className="lg:col-span-5"><p className="eyebrow">Begin your private journey</p><h2 className="mt-4 text-4xl md:text-5xl">Customize Your Vietnam Journey</h2><p className="mt-6 leading-relaxed text-foreground/75">Share your dates, travel party, and pace. Our Hanoi team will prepare a free, zero-obligation proposal tailored to you.</p><div className="mt-9 border-t border-border pt-7 text-sm leading-8"><a href="tel:+842439276076" className="block hover:text-ember"><Phone className="mr-2 inline size-4"/>+84 24 3927 6076 · Hanoi</a><a href="tel:+5491164601100" className="block hover:text-ember"><Phone className="mr-2 inline size-4"/>+54 911 6460 1100 · Americas</a><a href="mailto:info@absoluteasiatravel.com" className="block hover:text-ember">info@absoluteasiatravel.com</a></div></div><div className="bg-background p-7 shadow-soft lg:col-span-7 md:p-10"><EnquiryForm/></div></div></section>
     </main>
     <Footer/>
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background p-3 md:hidden"><Button className="w-full" onClick={()=>scrollTo("inquiry")}>Customize My Journey</Button></div>
@@ -149,6 +149,28 @@ function VideoPlayer({id,title}:{id:string;title:string}) { const [loaded,setLoa
 function ListBlock({title,items,negative=false}:{title:string;items:string[];negative?:boolean}) { return <div><h3 className="text-2xl">{negative?"Not included":"Included"}</h3><ul className="mt-6 divide-y divide-border border-y border-border">{items.map((x)=><li key={x} className="flex gap-3 py-4 text-sm leading-relaxed"><span className={negative?"text-muted-foreground":"text-ember"}>{negative?"—":<Check className="size-4"/>}</span>{x}</li>)}</ul></div> }
 function TrustDetail({term,text}:{term:string;text:string}) { return <div><dt className="text-[10px] uppercase tracking-[0.18em] text-gold">{term}</dt><dd className="mt-2 text-sm leading-relaxed text-ivory/80">{text}</dd></div> }
 function Stat({big,label}:{big:string;label:string}) { return <div><strong className="font-display text-3xl font-normal text-ember">{big}</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{label}</span></div> }
+function EnquiryForm() {
+  const submit = useServerFn(submitEnquiry);
+  const [sent,setSent]=useState(false);
+  const [busy,setBusy]=useState(false);
+  const [error,setError]=useState("");
+  if (sent) return <div className="py-16 text-center"><p className="eyebrow">Thank you</p><h3 className="mt-4 text-3xl">Your journey brief has been received.</h3><p className="mt-4 text-muted-foreground">A travel specialist will be in touch to discuss your private Vietnam journey.</p></div>;
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const f = new FormData(e.currentTarget);
+    const get = (k: string) => String(f.get(k) ?? "").trim();
+    const fullName = get("name"), email = get("email");
+    if (!fullName) { setError("Please enter your name."); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 255) { setError("Please enter a valid email address."); return; }
+    setError(""); setBusy(true);
+    try {
+      const res = await submit({ data: { fullName: fullName.slice(0,120), email, phone: get("phone").slice(0,60), guests: get("guests").slice(0,60), travelDates: get("dates").slice(0,120), wishes: get("wishes").slice(0,3000), source: "vietnam-private-journey" } });
+      if (res.ok) setSent(true); else setError(res.error);
+    } catch { setError("We could not send your enquiry. Please try again, or email info@absoluteasiatravel.com."); }
+    finally { setBusy(false); }
+  };
+  return <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2"><Field label="Your Full Name" name="name" required/><Field label="Email Address" name="email" type="email" required/><Field label="Phone / WhatsApp" name="phone" type="tel" required/><label className="grid gap-2 text-sm">Guests<select name="guests" className="min-h-12 border border-input bg-background px-3 focus:outline-none focus:ring-2 focus:ring-ring"><option>2 Adults</option><option>3–4 (Family)</option><option>5–8 (Multi-Gen)</option><option>9+ (Private Group)</option></select></label><Field label="Estimated Travel Month / Year" name="dates" placeholder="e.g. October 2026" full/><label className="grid gap-2 text-sm sm:col-span-2">Special Wishes / Pacing / Mobility<textarea name="wishes" rows={5} placeholder="Tell us what would make this journey right for you." className="border border-input bg-background px-3 py-3 focus:outline-none focus:ring-2 focus:ring-ring"/></label>{error&&<p role="alert" className="text-sm text-ember sm:col-span-2">{error}</p>}<div className="sm:col-span-2"><Button type="submit" size="lg" disabled={busy} className="w-full">{busy?"Sending…":<>Get Your Free Custom Itinerary <ArrowRight/></>}</Button><p className="mt-3 text-center text-xs text-muted-foreground">No payment required · Zero spam · Your details are used only for your journey proposal.</p></div></form>;
+}
 function GuideForm() {
   const submit = useServerFn(submitGuideLead);
   const [sent,setSent]=useState(false);
