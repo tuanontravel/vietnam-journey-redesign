@@ -35,31 +35,36 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.985 0.008 80);
-  --foreground: oklch(0.245 0.012 50);
-  --card: oklch(0.995 0.004 80);
-  --card-foreground: oklch(0.245 0.012 50);
-  --primary: oklch(0.508 0.182 28);
-  --primary-foreground: oklch(0.985 0.008 80);
-  --secondary: oklch(0.955 0.014 75);
-  --secondary-foreground: oklch(0.245 0.012 50);
-  --muted: oklch(0.955 0.014 75);
-  --muted-foreground: oklch(0.495 0.012 60);
-  --accent: oklch(0.94 0.018 75);
-  --accent-foreground: oklch(0.245 0.012 50);
-  --border: oklch(0.895 0.012 70);
-  --input: oklch(0.82 0.012 70);
-  --ring: oklch(0.508 0.182 28);
-  --ember: oklch(0.508 0.182 28);
-  --gold: oklch(0.795 0.115 80);
-  --ivory: oklch(0.985 0.008 80);
-  --cream: oklch(0.955 0.018 78);
-  --ink: oklch(0.215 0.012 50);
-  --ink-soft: oklch(0.27 0.015 50);
-  --hero-foreground: oklch(0.985 0.008 80);
-  --overlay: oklch(0.12 0.02 40 / 0.88);
-  --hero-veil: linear-gradient(180deg, oklch(0.12 0.02 40 / 0.12), oklch(0.12 0.02 40 / 0.76));
-  --shadow-soft: 0 1px 2px oklch(0.2 0.02 40 / 0.04), 0 18px 40px -24px oklch(0.2 0.02 40 / 0.2);
+  /* Warm linen #FAF9F5 */
+  --background: oklch(0.978 0.004 85);
+  --foreground: oklch(0.255 0.012 55);
+  --card: oklch(0.995 0.003 85);
+  --card-foreground: oklch(0.255 0.012 55);
+  /* Burgundy #8C0C10 */
+  --primary: oklch(0.382 0.155 28);
+  --primary-foreground: oklch(0.978 0.004 85);
+  --secondary: oklch(0.951 0.011 82);
+  --secondary-foreground: oklch(0.255 0.012 55);
+  --muted: oklch(0.951 0.011 82);
+  --muted-foreground: oklch(0.487 0.011 62);
+  --accent: oklch(0.935 0.015 82);
+  --accent-foreground: oklch(0.255 0.012 55);
+  --border: oklch(0.905 0.008 80);
+  --input: oklch(0.845 0.009 78);
+  --ring: oklch(0.382 0.155 28);
+  --ember: oklch(0.382 0.155 28);
+  /* Antique brass gold #C59B27 */
+  --gold: oklch(0.707 0.113 84);
+  --ivory: oklch(0.978 0.004 85);
+  --cream: oklch(0.951 0.013 82);
+  --ink: oklch(0.225 0.014 55);
+  --ink-soft: oklch(0.285 0.016 55);
+  --hero-foreground: oklch(0.978 0.004 85);
+  --overlay: oklch(0.13 0.02 40 / 0.88);
+  --hero-veil: linear-gradient(180deg, oklch(0.13 0.02 40 / 0.12), oklch(0.13 0.02 40 / 0.76));
+  --shadow-soft: 0 1px 2px oklch(0.24 0.02 40 / 0.035), 0 18px 40px -24px oklch(0.24 0.02 40 / 0.18);
+  --shadow-float: 0 1px 1px oklch(0.24 0.02 40 / 0.03), 0 10px 24px -16px oklch(0.24 0.02 40 / 0.16), 0 34px 70px -40px oklch(0.24 0.02 40 / 0.22);
+  --shadow-float-hover: 0 1px 1px oklch(0.24 0.02 40 / 0.04), 0 16px 32px -18px oklch(0.24 0.02 40 / 0.2), 0 46px 90px -44px oklch(0.24 0.02 40 / 0.28);
 }
 
 @layer base {
