@@ -46,7 +46,7 @@ const seasons = [
 
 function Section({ id, eyebrow, title, intro, children, tone = "light" }: { id: string; eyebrow: string; title: string; intro?: string; children: ReactNode; tone?: "light" | "cream" | "ink" }) {
   return (
-    <section id={id} className={`${tone === "cream" ? "bg-cream" : tone === "ink" ? "bg-ink text-ivory" : "bg-background"} scroll-mt-28 py-20 md:py-28`}>
+    <section id={id} className={`${tone === "cream" ? "bg-cream" : tone === "ink" ? "bg-ink text-ivory" : "bg-background"} scroll-mt-28 py-24 md:py-36`}>
       <div className="container-editorial">
         <div className="max-w-3xl">
           <p className={tone === "ink" ? "text-[11px] uppercase tracking-[0.22em] text-gold" : "eyebrow"}>{eyebrow}</p>
@@ -100,7 +100,7 @@ function VietnamCollection() {
             <div className="container-editorial pb-12 md:pb-16">
               <p className="text-[11px] uppercase tracking-[0.22em] text-gold">The Vietnam Collection</p>
               <h1 className="mt-4 max-w-3xl text-4xl leading-[1.08] text-hero-foreground md:text-6xl">Vietnam, travelled privately and without rush</h1>
-              <p className="mt-6 max-w-xl leading-relaxed text-hero-foreground/80">Every region we know first-hand, and the private journeys we build through them — guided by our own team in Hanoi, always tailor-made to your pace.</p>
+              <p className="mt-6 measure leading-relaxed text-hero-foreground/80">Every region we know first-hand, and the private journeys we build through them — guided by our own team in Hanoi, always tailor-made to your pace.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild><Link to="/">See the 10-Day Signature Journey <ArrowRight className="ml-2 size-4" /></Link></Button>
                 <Button size="lg" variant="light" asChild><a href="#destinations">Explore Destinations</a></Button>
@@ -112,7 +112,7 @@ function VietnamCollection() {
         <Section id="destinations" eyebrow="Where we travel" title="Regions of Vietnam" intro="Seven places that shape almost every itinerary we write, from the northern bays to the Mekong Delta. Each can be lengthened, shortened or left out entirely.">
           <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {destinations.map(([name, region, image, text, highlights]) => (
-              <article key={name} className="flex flex-col">
+              <article key={name} className="card-float flex flex-col overflow-hidden">
                 {image ? (
                   <img src={image} alt={name} loading="lazy" className="aspect-[4/3] w-full object-cover" />
                 ) : (
@@ -120,10 +120,10 @@ function VietnamCollection() {
                     <span className="font-display text-3xl text-ink/45">{name}</span>
                   </div>
                 )}
-                <p className="mt-5 text-[10px] uppercase tracking-[0.18em] text-gold">{region}</p>
-                <h3 className="mt-2 text-2xl">{name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/75">{text}</p>
-                <ul className="mt-4 space-y-1.5 border-t border-border pt-4 text-xs text-muted-foreground">
+                <p className="mt-5 px-6 text-[10px] uppercase tracking-[0.18em] text-gold">{region}</p>
+                <h3 className="mt-2 px-6 text-2xl">{name}</h3>
+                <p className="mt-3 px-6 text-sm leading-relaxed text-foreground/75">{text}</p>
+                <ul className="mx-6 mb-6 mt-4 space-y-1.5 border-t border-border pt-4 text-xs text-muted-foreground">
                   {highlights.map((h) => <li key={h}>{h}</li>)}
                 </ul>
               </article>
