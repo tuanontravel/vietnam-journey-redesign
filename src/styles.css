@@ -96,6 +96,23 @@
 
 @utility bg-hero-veil { background: var(--hero-veil); }
 @utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-float { box-shadow: var(--shadow-float); }
+
+@utility card-float {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: var(--shadow-float);
+  transition: box-shadow 300ms ease, transform 300ms ease;
+  &:hover {
+    box-shadow: var(--shadow-float-hover);
+    transform: translateY(-2px);
+  }
+}
+
+@utility measure {
+  max-width: 62ch;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
