@@ -38,6 +38,45 @@ export type Database = {
         }
         Relationships: []
       }
+      journey_enquiries: {
+        Row: {
+          created_at: string
+          email: string
+          emailed_at: string | null
+          full_name: string
+          guests: string | null
+          id: string
+          phone: string | null
+          source: string
+          travel_dates: string | null
+          wishes: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          emailed_at?: string | null
+          full_name: string
+          guests?: string | null
+          id?: string
+          phone?: string | null
+          source?: string
+          travel_dates?: string | null
+          wishes?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          emailed_at?: string | null
+          full_name?: string
+          guests?: string | null
+          id?: string
+          phone?: string | null
+          source?: string
+          travel_dates?: string | null
+          wishes?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
