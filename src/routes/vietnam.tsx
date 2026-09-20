@@ -81,7 +81,7 @@ function VietnamCollection() {
             {nav.map(([id, label]) => <a key={id} href={`#${id}`} className="text-xs text-foreground/75 hover:text-ember">{label}</a>)}
           </nav>
           <div className="flex items-center gap-2">
-            <Link to="/" hash="inquiry" className="hidden sm:block"><Button>Customize My Journey</Button></Link>
+            <Button asChild className="hidden sm:inline-flex"><Link to="/" hash="inquiry">Customize My Journey</Link></Button>
             <Button variant="ghost" size="icon" aria-label="Open menu" className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</Button>
           </div>
         </div>
@@ -102,8 +102,8 @@ function VietnamCollection() {
               <h1 className="mt-4 max-w-3xl text-4xl leading-[1.08] text-hero-foreground md:text-6xl">Vietnam, travelled privately and without rush</h1>
               <p className="mt-6 max-w-xl leading-relaxed text-hero-foreground/80">Every region we know first-hand, and the private journeys we build through them — guided by our own team in Hanoi, always tailor-made to your pace.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/"><Button size="lg">See the 10-Day Signature Journey <ArrowRight className="ml-2 size-4" /></Button></Link>
-                <a href="#destinations"><Button size="lg" variant="light">Explore Destinations</Button></a>
+                <Button size="lg" asChild><Link to="/">See the 10-Day Signature Journey <ArrowRight className="ml-2 size-4" /></Link></Button>
+                <Button size="lg" variant="light" asChild><a href="#destinations">Explore Destinations</a></Button>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ function VietnamCollection() {
                 <div><dt className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Rating</dt><dd className="mt-1">5.0 / 5.0</dd></div>
                 <div><dt className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">From</dt><dd className="mt-1 font-display text-2xl text-ember">$1,890</dd></div>
               </dl>
-              <Link to="/" className="mt-8 inline-block"><Button size="lg">View the Full Itinerary <ArrowRight className="ml-2 size-4" /></Button></Link>
+              <Button size="lg" asChild className="mt-8"><Link to="/">View the Full Itinerary <ArrowRight className="ml-2 size-4" /></Link></Button>
             </div>
           </div>
         </Section>
@@ -189,8 +189,8 @@ function VietnamCollection() {
             <div>
               <p className="leading-relaxed text-ivory/75">Licensed by the Vietnam National Administration of Tourism (#01-1051/TCDL-GP LHQT), with 24/7 WhatsApp support for every traveller on the road.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/" hash="inquiry"><Button size="lg">Customize My Journey</Button></Link>
-                <a href="tel:+842439276076"><Button size="lg" variant="light">+84 24 3927 6076</Button></a>
+                <Button size="lg" asChild><Link to="/" hash="inquiry">Customize My Journey</Link></Button>
+                <Button size="lg" variant="light" asChild><a href="tel:+842439276076">+84 24 3927 6076</a></Button>
               </div>
               <div className="mt-8 grid gap-2 text-sm text-ivory/70">
                 <a href="mailto:info@absoluteasiatravel.com">info@absoluteasiatravel.com</a>
@@ -206,14 +206,14 @@ function VietnamCollection() {
               <h2 className="text-3xl">Prefer to start with the signature journey?</h2>
               <p className="mt-3 text-sm text-foreground/75">Read the full ten-day itinerary, traveller videos and reviews.</p>
             </div>
-            <Link to="/"><Button size="lg">Authentic Vietnam · 10 Days <ArrowRight className="ml-2 size-4" /></Button></Link>
+            <Button size="lg" asChild><Link to="/">Authentic Vietnam · 10 Days <ArrowRight className="ml-2 size-4" /></Link></Button>
           </div>
         </section>
       </main>
 
       <Footer />
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
-        <Link to="/" hash="inquiry" className="block"><Button className="w-full">Customize My Journey</Button></Link>
+        <Button asChild className="w-full"><Link to="/" hash="inquiry">Customize My Journey</Link></Button>
       </div>
       <div className="h-18 md:hidden" />
     </div>
