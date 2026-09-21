@@ -10,6 +10,7 @@ import hoiAn from "@/assets/journey/hoi-an.jpg";
 import kayaking from "@/assets/journey/kayaking.jpg";
 import mekong from "@/assets/journey/mekong.jpg";
 import team from "@/assets/journey/team.jpg";
+import companyLogo from "@/assets/brand/absolute-asia-travel-logo.jpg.asset.json";
 
 const nav = [
   ["destinations", "Destinations"],
@@ -74,9 +75,8 @@ function VietnamCollection() {
 
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-md">
         <div className="container-editorial grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:grid-cols-[auto_1fr_auto]">
-          <Link to="/" className="min-w-0">
-            <span className="block truncate font-display text-xl text-ink">Absolute Asia</span>
-            <span className="hidden text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:block">Personalized Experiences</span>
+          <Link to="/" className="min-w-0" aria-label="Absolute Asia Travel home">
+            <img src={companyLogo.url} alt="Absolute Asia Travel — Personalized Experiences" width="480" height="99" className="h-10 w-auto max-w-[210px] object-contain sm:h-12 sm:max-w-[260px]" />
           </Link>
           <nav className="hidden justify-center gap-6 lg:flex">
             {nav.map(([id, label]) => <a key={id} href={`#${id}`} className="text-xs text-foreground/75 hover:text-ember">{label}</a>)}
