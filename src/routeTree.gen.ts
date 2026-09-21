@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeadsRouteImport } from './routes/leads'
 import { Route as VietnamRouteImport } from './routes/vietnam'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadsRoute = LeadsRouteImport.update({
+  id: '/leads',
+  path: '/leads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VietnamRoute = VietnamRouteImport.update({
@@ -25,27 +31,31 @@ const VietnamRoute = VietnamRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/leads': typeof LeadsRoute
   '/vietnam': typeof VietnamRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/leads': typeof LeadsRoute
   '/vietnam': typeof VietnamRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/leads': typeof LeadsRoute
   '/vietnam': typeof VietnamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vietnam'
+  fullPaths: '/' | '/leads' | '/vietnam'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vietnam'
-  id: '__root__' | '/' | '/vietnam'
+  to: '/' | '/leads' | '/vietnam'
+  id: '__root__' | '/' | '/leads' | '/vietnam'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LeadsRoute: typeof LeadsRoute
   VietnamRoute: typeof VietnamRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leads': {
+      id: '/leads'
+      path: '/leads'
+      fullPath: '/leads'
+      preLoaderRoute: typeof LeadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vietnam': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LeadsRoute: LeadsRoute,
   VietnamRoute: VietnamRoute,
 }
 export const routeTree = rootRouteImport
