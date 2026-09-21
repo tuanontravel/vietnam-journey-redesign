@@ -60,7 +60,7 @@ export function HeroPicture({ alt, className }: { alt: string; className: string
       <source media="(max-width: 767px)" type="image/webp" srcSet={heroMobileWebp} sizes="100vw" />
       <source type="image/avif" srcSet={heroDesktopAvif} sizes="100vw" />
       <source type="image/webp" srcSet={heroDesktopWebp} sizes="100vw" />
-      <img src={heroDesktop} alt={alt} width={1920} height={1080} fetchPriority="high" decoding="sync" className={className} />
+      <img src={heroDesktop} alt={alt} width={1920} height={1088} fetchPriority="high" decoding="sync" className={className} />
     </picture>
   );
 }
