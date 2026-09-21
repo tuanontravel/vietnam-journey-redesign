@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HeroPicture, OptimizedImage } from "@/components/OptimizedImage";
 import { Footer } from "@/components/JourneyPage";
 import hero from "@/assets/journey/hero-halong.jpg";
 import hanoi from "@/assets/journey/hanoi.jpg";
@@ -94,7 +95,7 @@ function VietnamCollection() {
 
       <main>
         <section className="relative">
-          <img src={hero} alt="Limestone karsts rising from the emerald water of Halong Bay" className="h-[62vh] min-h-[420px] w-full object-cover md:h-[70vh]" />
+          <HeroPicture alt="A couple sharing a quiet sunrise boat journey among the limestone karsts of Lan Ha Bay" className="h-[78svh] min-h-[560px] w-full object-cover object-[58%_center] md:h-[70vh] md:min-h-[520px] md:object-center" />
           <div className="absolute inset-0 bg-hero-veil" />
           <div className="absolute inset-0 flex items-end">
             <div className="container-editorial pb-12 md:pb-16">
@@ -114,7 +115,7 @@ function VietnamCollection() {
             {destinations.map(([name, region, image, text, highlights]) => (
               <article key={name} className="card-float flex flex-col overflow-hidden">
                 {image ? (
-                  <img src={image} alt={name} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  <OptimizedImage src={image} alt={name} sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" className="aspect-[4/3] w-full object-cover" />
                 ) : (
                   <div className="grid aspect-[4/3] w-full place-items-center bg-cream">
                     <span className="font-display text-3xl text-ink/45">{name}</span>
@@ -133,7 +134,7 @@ function VietnamCollection() {
 
         <Section id="featured" eyebrow="Start here" title="Authentic Vietnam: 10-Day Private Journey" intro="Our most requested itinerary, and the clearest picture of how we pace a private trip." tone="cream">
           <div className="mt-12 grid gap-10 border-t border-border pt-12 md:grid-cols-2 md:items-center">
-            <img src={hoiAn} alt="Silk lanterns glowing in the ancient town of Hoi An" loading="lazy" className="aspect-[5/4] w-full object-cover" />
+            <OptimizedImage src={hoiAn} alt="Silk lanterns glowing in the ancient town of Hoi An" sizes="(max-width: 767px) 100vw, 50vw" className="aspect-[5/4] w-full object-cover" />
             <div>
               <p className="text-sm leading-relaxed text-foreground/80">Ten days from Hanoi and Lan Ha Bay to Hoi An, Hue, Saigon and the Mekong Delta — private car and guide throughout, late starts, afternoon rest, two internal flights included and no shopping stops.</p>
               <dl className="mt-8 grid grid-cols-2 gap-6 border-y border-border py-6 text-sm">
@@ -185,7 +186,7 @@ function VietnamCollection() {
 
         <Section id="plan" eyebrow="Plan with us" title="Our team in Hanoi writes every itinerary" intro="No call centres and no third-party operators. Tell us who is travelling, when, and how much walking feels right — we will send a private itinerary to react to." tone="ink">
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-center">
-            <img src={team} alt="The Absolute Asia Travel team in Hanoi" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+            <OptimizedImage src={team} alt="The Absolute Asia Travel team in Hanoi" sizes="(max-width: 767px) 100vw, 50vw" className="aspect-[4/3] w-full object-cover" />
             <div>
               <p className="leading-relaxed text-ivory/75">Licensed by the Vietnam National Administration of Tourism (#01-1051/TCDL-GP LHQT), with 24/7 WhatsApp support for every traveller on the road.</p>
               <div className="mt-8 flex flex-wrap gap-3">
