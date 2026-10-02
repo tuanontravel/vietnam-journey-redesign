@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "Absolute Asia Travel", url: "https://absoluteasiatravel.com", telephone: "+84 24 3927 6076", email: "info@absoluteasiatravel.com", address: { "@type": "PostalAddress", streetAddress: "107 Ai Mo Street, Bo De Ward, Long Bien District", addressLocality: "Hanoi", addressCountry: "VN" } }) },
+      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "Absolute Asia Travel", url: "https://absoluteasiatravel.com", telephone: "+84 24 3927 6076", email: "info@absoluteasiatravel.com", address: { "@type": "PostalAddress", streetAddress: "107 Ai Mo St., Bo De Ward", addressLocality: "Hanoi", addressCountry: "VN" } }) },
       { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }) },
     ],
   }),
