@@ -68,7 +68,7 @@ function VietnamCollection() {
       <div className="bg-ink text-ivory">
         <div className="container-editorial grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-2.5 text-[10px] uppercase tracking-[0.16em] md:grid-cols-3">
           <span className="truncate text-gold">5.0 TripAdvisor · 450+ reviews</span>
-          <span className="hidden text-center md:block">VNAT Licensed · #01-1051/TCDL-GP LHQT</span>
+          <span className="hidden text-center md:block">International Tour Operator License: 01-2002/2020 CDLQG VN-GP LHQT</span>
           <a href="tel:+842439276076" className="shrink-0 md:text-right">Hanoi · +84 24 3927 6076</a>
         </div>
       </div>
@@ -188,14 +188,14 @@ function VietnamCollection() {
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-center">
             <OptimizedImage src={team} alt="The Absolute Asia Travel team in Hanoi" sizes="(max-width: 767px) 100vw, 50vw" className="aspect-[4/3] w-full object-cover" />
             <div>
-              <p className="leading-relaxed text-ivory/75">Licensed by the Vietnam National Administration of Tourism (#01-1051/TCDL-GP LHQT), with 24/7 WhatsApp support for every traveller on the road.</p>
+              <p className="leading-relaxed text-ivory/75">Licensed by the Vietnam National Administration of Tourism (International Tour Operator License: 01-2002/2020 CDLQG VN-GP LHQT), with 24/7 WhatsApp support for every traveller on the road.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild><Link to="/" hash="inquiry">Customize My Journey</Link></Button>
                 <Button size="lg" variant="light" asChild><a href="tel:+842439276076">+84 24 3927 6076</a></Button>
               </div>
               <div className="mt-8 grid gap-2 text-sm text-ivory/70">
                 <a href="mailto:info@absoluteasiatravel.com">info@absoluteasiatravel.com</a>
-                <p>107 Ai Mo St., Bo De, Long Bien, Hanoi</p>
+                <p>107 Ai Mo St., Bo De Ward, Hanoi, Vietnam</p>
               </div>
             </div>
           </div>
