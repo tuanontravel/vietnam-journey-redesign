@@ -188,7 +188,7 @@ function VietnamCollection() {
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-center">
             <OptimizedImage src={team} alt="The Absolute Asia Travel team in Hanoi" sizes="(max-width: 767px) 100vw, 50vw" className="aspect-[4/3] w-full object-cover" />
             <div>
-              <p className="leading-relaxed text-ivory/75">Licensed by the Vietnam National Administration of Tourism (#01-1051/TCDL-GP LHQT), with 24/7 WhatsApp support for every traveller on the road.</p>
+              <p className="leading-relaxed text-ivory/75">Licensed by the Vietnam National Administration of Tourism (International Tour Operator License: 01-2002/2020 CDLQG VN-GP LHQT), with 24/7 WhatsApp support for every traveller on the road.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild><Link to="/" hash="inquiry">Customize My Journey</Link></Button>
                 <Button size="lg" variant="light" asChild><a href="tel:+842439276076">+84 24 3927 6076</a></Button>
