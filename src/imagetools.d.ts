@@ -62,3 +62,28 @@ declare module "*.jpg?w=1280&format=webp" {
   const url: string;
   export default url;
 }
+
+declare module "*.webp" {
+  const url: string;
+  export default url;
+}
+
+declare module "*.webp?w=360;720&format=avif&as=srcset" {
+  const srcSet: string;
+  export default srcSet;
+}
+
+declare module "*.webp?w=360;720&format=webp&as=srcset" {
+  const srcSet: string;
+  export default srcSet;
+}
+
+declare module "*.webp?w=360;720;1200&format=avif&as=srcset" {
+  const srcSet: string;
+  export default srcSet;
+}
+
+declare module "*.webp?w=360;720;1200&format=webp&as=srcset" {
+  const srcSet: string;
+  export default srcSet;
+}
