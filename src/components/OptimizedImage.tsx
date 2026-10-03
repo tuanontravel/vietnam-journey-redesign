@@ -42,6 +42,9 @@ const variants: Record<string, Variant> = {
   [kayaking]: { avif: kayakingAvif, webp: kayakingWebp },
   [mekong]: { avif: mekongAvif, webp: mekongWebp },
   [team]: { avif: teamAvif, webp: teamWebp },
+  [staysAira]: { avif: staysAiraAvif, webp: staysAiraWebp },
+  [staysDragon]: { avif: staysDragonAvif, webp: staysDragonWebp },
+  [staysReu]: { avif: staysReuAvif, webp: staysReuWebp },
 };
 
 type OptimizedImageProps = ImgHTMLAttributes<HTMLImageElement> & {
