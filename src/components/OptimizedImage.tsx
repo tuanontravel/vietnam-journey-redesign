@@ -23,6 +23,15 @@ import heroDesktopAvif from "@/assets/journey/hero-emotional-desktop.jpg?w=768;1
 import heroDesktopWebp from "@/assets/journey/hero-emotional-desktop.jpg?w=768;1280;1920&format=webp&as=srcset";
 import heroMobileAvif from "@/assets/journey/hero-emotional-mobile.jpg?w=540;1080&format=avif&as=srcset";
 import heroMobileWebp from "@/assets/journey/hero-emotional-mobile.jpg?w=540;1080&format=webp&as=srcset";
+import staysAira from "@/assets/journey/stays-aira.webp";
+import staysAiraAvif from "@/assets/journey/stays-aira.webp?w=360;720&format=avif&as=srcset";
+import staysAiraWebp from "@/assets/journey/stays-aira.webp?w=360;720&format=webp&as=srcset";
+import staysDragon from "@/assets/journey/stays-dragon-pearl.webp";
+import staysDragonAvif from "@/assets/journey/stays-dragon-pearl.webp?w=360;720;1200&format=avif&as=srcset";
+import staysDragonWebp from "@/assets/journey/stays-dragon-pearl.webp?w=360;720;1200&format=webp&as=srcset";
+import staysReu from "@/assets/journey/stays-reu.webp";
+import staysReuAvif from "@/assets/journey/stays-reu.webp?w=360;720;1200&format=avif&as=srcset";
+import staysReuWebp from "@/assets/journey/stays-reu.webp?w=360;720;1200&format=webp&as=srcset";
 
 type Variant = { avif: string; webp: string };
 
