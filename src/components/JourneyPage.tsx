@@ -9,6 +9,9 @@ import companyLogo from "@/assets/brand/absolute-asia-travel-logo.jpg.asset.json
 import hero from "@/assets/journey/hero-halong.jpg";
 import hoiAn from "@/assets/journey/hoi-an.jpg";
 import hanoi from "@/assets/journey/hanoi.jpg";
+import staysAira from "@/assets/journey/stays-aira.webp";
+import staysDragon from "@/assets/journey/stays-dragon-pearl.webp";
+import staysReu from "@/assets/journey/stays-reu.webp";
 import kayaking from "@/assets/journey/kayaking.jpg";
 import mekong from "@/assets/journey/mekong.jpg";
 import andy from "@/assets/journey/andy.jpg";
